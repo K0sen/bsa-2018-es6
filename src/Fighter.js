@@ -7,12 +7,12 @@ class Fighter {
 
     setDamage(damage) {
         this.health -= damage;
-        console.log(this.health);
     }
 
-    hit(enemy, point) {
+    hit(enemy, point = 1) {
         let damage = point * this.power;
         enemy.setDamage(damage);
+        console.log(`${this.name}[${this.health}]  ==(${damage})==>  ${enemy.name}[${enemy.health}]`);
     }
 }
 
