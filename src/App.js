@@ -1,6 +1,7 @@
-import Test from "./Test.js";
+import Fighter from "./Fighter.js";
 
-let test = new Test("Tesst", 2);
+let fighter = new Fighter("Tesst", 232323, 232323);
 
-document.write(`${test.name}<br>`);
-document.write(test.name);
+fighter.setDamage(123);
+
+document.write(`${fighter.health}<br>`);
