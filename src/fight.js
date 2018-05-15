@@ -6,14 +6,17 @@ export default function fight(fighter, improvedFighter, ...point) {
 
   console.log(`>>> ${fighter.name} vs ${improvedFighter.name} <<<`);
 
+  // just to use an arrow function ˙ ͜ʟ˙
+  let turn = func => func();
+
   while (fighter.health > 0 && improvedFighter.health > 0 && i < points.length) {
     if (k % 2 === 0) {
-      fighter.hit(improvedFighter, points[i]);
+      turn(fighter.hit.bind(fighter, improvedFighter, points[i]));
       k++;
       continue;
     }
 
-    improvedFighter.doubleHit(fighter, points[i]);
+    turn(improvedFighter.doubleHit.bind(improvedFighter, fighter, points[i]));
     k++;
     i++;
   }
